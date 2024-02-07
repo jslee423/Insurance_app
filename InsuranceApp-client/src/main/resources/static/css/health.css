@@ -1,0 +1,66 @@
+.health {
+	padding: 20px 0;
+}
+
+.health h2 {
+	padding-bottom: 20px;
+}
+
+.health h3, p {
+	font-weight: 300;
+	color: #304254;
+}
+
+.health .typeRow {
+	padding: 30px 0;
+}
+
+.health .planType {
+	display: flex;
+	justify-content: center;
+}
+
+.health .planType div {
+	box-shadow: 0 -14px 30px 0 rgba(0, 0, 0, 0.05);
+    -webkit-box-shadow: 0 -14px 30px 0 rgba(0, 0, 0, 0.05);
+	margin: 0;
+	padding: 30px 0;
+	width: 100%;
+	border-radius: 10px;
+	cursor: pointer;
+	background-color: #f3f6f8;
+}
+
+.health .nav-tabs a {
+	font-size: 16px;
+	color: #00b2ce;
+}
+
+#health-tab {
+	background-color: transparent;
+}
+
+.goldTier {
+	background-color: #FFD700;
+}
+
+.product-tab-ppo img {
+	left: 0;
+}
+
+.product-tab-ppo .resp-vtabs .resp-tabs-container {
+	margin-top: -373px;
+}
+
+.product-tab-ppo .tab-header-ppo {
+	text-align: right;
+	
+}
+
+@media only screen and (max-width: 980px) {
+	.product-tab-ppo .resp-vtabs .resp-tabs-container {
+	margin-top: 0;
+}
+}
+
+
