@@ -1,0 +1,135 @@
+.apply {
+	color: #304254;
+	font-weight: 300;
+}
+
+.apply h2 {
+	padding: 30px 0;
+}
+
+.apply h4 {
+	font-weight: 300;
+}
+
+.apply nav {
+	padding-top: 30px;
+}
+
+.apply ul li:last-child {
+    padding-right: 0;
+}
+
+.apply ul li {
+    display: inline-block;
+    padding-right: 50px;
+    vertical-align: middle;
+    font-weight: 300;
+    font-size: 16px;
+}
+
+.apply ul li.active {
+	font-weight: 700;
+	text-decoration: underline;
+	text-decoration-thickness: 2px;
+	text-decoration-color: #00b2ce;
+}
+
+.apply input[type="text"], input[type="date"], select {
+	width: 70%;
+	margin: auto;
+	padding: 0 10px;
+}
+
+.apply input[type="date"] {
+	width: 70%;
+	text-align: center;
+}
+
+.apply input[type="text"], input[type="date"] {
+	margin-bottom: 30px;	
+}
+
+.apply select {
+	margin-bottom: 20px;	
+}
+
+.apply input[type="text"]::placeholder, input[type="date"]::placeholder, option::placeholder {
+	text-align: center;
+}
+
+.apply select {
+	text-align: center;
+}
+
+
+.apply .section {
+	display: none;
+}
+
+.apply .activeSection {
+	display: block;
+}
+
+.apply .btn-back {
+	background-color: #4e6073;
+	margin-right: 10px;
+}
+
+.apply .error {
+	color: red;
+	padding-bottom: 20px;
+}
+
+.apply .error p {
+	margin: 0;
+}
+
+#infoSection .infoForm {
+	box-shadow: 0 -14px 30px 0 rgba(0, 0, 0, 0.05);
+    -webkit-box-shadow: 0 -14px 30px 0 rgba(0, 0, 0, 0.05);
+	width: 50%;
+	margin: auto;
+	padding: 20px 0;
+	border-bottom: thin solid #e9e9e9;
+	margin-bottom: 20px;
+	cursor: pointer;
+}
+
+#infoSection .infoForm:hover {
+	outline: thin solid #e9e9e9;
+}
+
+
+.applyTabs i {
+	color: #00b2ce;
+}
+
+#planSection ul {
+	display: flex;
+	flex-direction: column;
+}
+
+#planSection ul li {
+	padding: 0;
+}
+
+#planSection .planSectionPlans {
+	box-shadow: 0 -14px 30px 0 rgba(0, 0, 0, 0.05);
+    -webkit-box-shadow: 0 -14px 30px 0 rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 20px 0;
+    border: thin solid #e9e9e9;
+   	cursor: pointer;
+   	box-shadow: inset 0 -3px 0 0 rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: inset 0 -3px 0 0 rgba(0, 0, 0, 0.15);
+}
+
+#planSection .planSectionPlans:hover {
+	border-color: #00b2ce;
+}
+
+#planSection .planSectionPlans.active {
+	background-color: #00b2ce;
+	color: white;
+}
