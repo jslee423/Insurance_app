@@ -33,31 +33,22 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="/">
-                    Insurance<span>Press</span>
-                </a>
+                <a class="navbar-brand" href="/">Insurance<span>Press</span></a>
                 <p>Call Us Now <b>+1 (555) 555-5555</b></p>
             </div>
             <div class="collapse navbar-collapse navbar-main-collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="/">Home</a>
-                    </li>
-                    <li>
-                    	<a href="/health">Plans</a>
-                    </li>
-                    <li>
-                        <a href="blog.html">Blog</a>
-                    </li>
-                    <li>
-                        <a href="blog-details.html">Blog Details</a>
-                    </li>
-                    <li>
-                        <a href="contact-us.html">Contact</a>
-                    </li>
+                    <sec:authorize access="hasAuthority('ADMIN') || hasAuthority('DBA')">
+                    	<li><a href="/admin">Admin</a></li>
+                    </sec:authorize>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/health">Plans</a></li>
+                    <!-- <li><a href="blog.html">Blog</a></li>
+                    <li><a href="blog-details.html">Blog Details</a></li> -->
+                    <li><a href="contact-us.html">Contact</a></li>
                     <li>
                     	<sec:authorize access="isAuthenticated()">
-                    		<a href="/login?logout" class="btn-default">Log out</a>
+                    		<a href="/login?logout" id="logout">Log out <i class="ti-arrow-right"></i></a>
                     	</sec:authorize>
                     	<sec:authorize access="!isAuthenticated()">
 	                        <a href="/login" class="btn-default">Log in/Register</a>
