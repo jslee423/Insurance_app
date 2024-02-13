@@ -82,7 +82,7 @@
             </section>
             <section class="col-sm-5 col-md-4 col-lg-4">
                 <div class="get-quote-form">
-                    <h2>Get a free quote form</h2>
+                    <h2>Get a free quote</h2>
                     <form id="get-quote">
                         <div>
                             <input type="text" name="name" placeholder="Your Name" />
@@ -118,7 +118,7 @@
                     <ul class="resp-tabs-list hor_1 col-sm-3 col-md-3 col-lg-3">
                         <li><i class="ti-home"></i> House Insurance</li>
                         <li><i class="fa fa-plane"></i> Travel Insurance</li>
-                        <li><i class="ti-heart-broken"></i> Life Insurance</li>
+                        <li><i class="ti-heart-broken"></i> Health Insurance</li>
                         <li><i class="ti-car"></i> Car Insurance</li>
                     </ul>
                     <div class="col-sm-5 col-md-5 col-lg-5 resp-tabs-container hor_1">
@@ -134,7 +134,7 @@
                                     <i class="fa fa-phone"></i> +123 456 7890 <span>Toll Free</span>
                                 </p>
                                 <p>
-                                    <a class="btn-default" href="product-houseinsurance.html">Get Free Quote</a>
+                                    <a class="btn-default" href="#">Get Free Quote</a>
                                 </p>
                             </div>
                             <img src="images/product-img.jpg" alt="" class="img-responsive" />
@@ -160,7 +160,7 @@
                             <div class="prod-tab-content">
                                 <h4>
                                     <span class="prod-cion"><i class="ti-heart-broken"></i></span>
-                                    Life Insurance
+                                    Health Insurance
                                 </h4>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nibh urna, euismod ut ornare non, volutpat vel tortor. Integer</p>
                                 <p>et placerat suscipit. Sed sodales scelerisque commodo. Nam porta cursus lectus. </p>
@@ -168,7 +168,7 @@
                                     <i class="fa fa-phone"></i> +123 456 7890 <span>Toll Free</span>
                                 </p>
                                 <p>
-                                    <a class="btn-default" href="#">Get Free Quote</a>
+                                    <a class="btn-default" href="/apply">Get Free Quote</a>
                                 </p>
                             </div>
                             <img src="images/3.jpg" alt="" class="img-responsive" />
