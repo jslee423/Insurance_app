@@ -120,10 +120,11 @@ $(document).ready(function() {
     	$(".navbar-nav li a[href='" + currentPath + "']").addClass('active')		
 	}
     
-    $(".health .nav-tabs a").click(function() {
+    $(".health .nav-tabs").on('click', 'a', function() {
 		console.log($(this).parent().siblings())
 		//$(this).parent().siblings().removeClass("active")
 		//$(this).addClass("active")
+		console.log($(this))
 		$(this).tab('show')
 	})
     
