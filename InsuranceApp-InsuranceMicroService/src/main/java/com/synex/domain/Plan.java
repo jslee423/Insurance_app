@@ -1,5 +1,7 @@
 package com.synex.domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -15,19 +17,29 @@ public class Plan {
 	private String planName;
 	private String planType;
 	private String description;
-	private Double basePrice;
+	private Double premium;
+	private Double deductible;
+	private Double pcpVisitPrice;
+	private Double specialistPrice;
+	private Double prescriptionPrice;
 	@ManyToOne
+	@JsonBackReference
 	private Insurance insurance;
 	
 	public Plan() {}
 
-	public Plan(Long id, String planName, String planType, String description, Double basePrice, Insurance insurance) {
+	public Plan(Long id, String planName, String planType, String description, Double premium, Double deductible, Double pcpVisitPrice,
+			Double specialistPrice, Double prescriptionPrice, Insurance insurance) {
 		super();
 		this.id = id;
 		this.planName = planName;
 		this.planType = planType;
 		this.description = description;
-		this.basePrice = basePrice;
+		this.premium = premium;
+		this.deductible = deductible;
+		this.pcpVisitPrice = pcpVisitPrice;
+		this.specialistPrice = specialistPrice;
+		this.prescriptionPrice = prescriptionPrice;
 		this.insurance = insurance;
 	}
 
@@ -63,12 +75,44 @@ public class Plan {
 		this.description = description;
 	}
 
-	public Double getBasePrice() {
-		return basePrice;
+	public Double getPremium() {
+		return premium;
 	}
 
-	public void setBasePrice(Double basePrice) {
-		this.basePrice = basePrice;
+	public void setPremium(Double premium) {
+		this.premium = premium;
+	}
+
+	public Double getDeductible() {
+		return deductible;
+	}
+
+	public void setDeductible(Double deductible) {
+		this.deductible = deductible;
+	}
+
+	public Double getPcpVisitPrice() {
+		return pcpVisitPrice;
+	}
+
+	public void setPcpVisitPrice(Double pcpVisitPrice) {
+		this.pcpVisitPrice = pcpVisitPrice;
+	}
+
+	public Double getSpecialistPrice() {
+		return specialistPrice;
+	}
+
+	public void setSpecialistPrice(Double specialistPrice) {
+		this.specialistPrice = specialistPrice;
+	}
+
+	public Double getPrescriptionPrice() {
+		return prescriptionPrice;
+	}
+
+	public void setPrescriptionPrice(Double prescriptionPrice) {
+		this.prescriptionPrice = prescriptionPrice;
 	}
 
 	public Insurance getInsurance() {
@@ -78,6 +122,8 @@ public class Plan {
 	public void setInsurance(Insurance insurance) {
 		this.insurance = insurance;
 	}
+
+	
 	
 	
 }
