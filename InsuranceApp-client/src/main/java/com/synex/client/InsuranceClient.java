@@ -62,4 +62,49 @@ public class InsuranceClient {
 		
 		return returnObj;
 	} 
+	
+	public JsonNode findPlanById(Long planId) {
+		RestTemplate restTemplate = new RestTemplate();
+		ResponseEntity<Object> responseEntity = restTemplate.getForEntity("http://localhost:8484/findPlanById/"+planId, Object.class);
+		Object objects = responseEntity.getBody();
+		
+		ObjectMapper mapper = new ObjectMapper();
+		JsonNode returnObj = mapper.convertValue(objects, JsonNode.class);
+		
+		return returnObj;
+	}
+	
+	public JsonNode saveCustomer(JsonNode json) {
+		System.out.println("InsuranceClient.saveCustomer()...");
+		
+		HttpHeaders headers = new HttpHeaders();
+		headers.setContentType(MediaType.APPLICATION_JSON);
+		HttpEntity<String> request = new HttpEntity<String>(json.toString(), headers);
+		
+		RestTemplate restTemplate = new RestTemplate();
+		ResponseEntity<Object> responseEntity = restTemplate.postForEntity("http://localhost:8484/saveCustomer", request, Object.class);
+		Object objects = responseEntity.getBody();
+		
+		ObjectMapper mapper = new ObjectMapper();
+		JsonNode returnObj = mapper.convertValue(objects, JsonNode.class);
+		
+		return returnObj;
+	} 
+	
+	public JsonNode getPlanQuote(JsonNode json) {
+		System.out.println("InsuranceClient.getPlanQuote()...");
+		
+		HttpHeaders headers = new HttpHeaders();
+		headers.setContentType(MediaType.APPLICATION_JSON);
+		HttpEntity<String> request = new HttpEntity<String>(json.toString(), headers);
+		
+		RestTemplate restTemplate = new RestTemplate();
+		ResponseEntity<Object> responseEntity = restTemplate.postForEntity("http://localhost:8484/getPlanQuote", request, Object.class);
+		Object objects = responseEntity.getBody();
+		
+		ObjectMapper mapper = new ObjectMapper();
+		JsonNode returnObj = mapper.convertValue(objects, JsonNode.class);
+		
+		return returnObj;
+	} 
 }

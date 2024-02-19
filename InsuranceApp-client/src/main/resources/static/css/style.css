@@ -139,6 +139,12 @@
     box-shadow: none;
     border: none;
 }
+
+.navbar-custom .nav li #logout {
+	margin-right: 10px;
+}
+
+
 .navbar-custom .nav li.dropdown ul.dropdown-menu {
     background-color: #293949;
     border: none;
@@ -450,6 +456,7 @@ a:hover {
 input[type="password"],
 input[type="text"],
 select,
+input[type="date"],
 textarea {
     border: none;
     width: 100%;
@@ -469,6 +476,7 @@ textarea {
 input[type="password"]:focus,
 input[type="text"]:focus,
 select:focus,
+input[type="date"],
 textarea:focus {
     border-color: #ccc;
 }
@@ -831,6 +839,13 @@ ul {
 .get-quote-form form .text-center {
     padding: 50px 0;
 }
+
+.get-quote-form .quote-error {
+	text-align: center;
+	color: red;
+}
+
+
 @media (max-width: 980px) {
     .get-quote-form {
         margin-top: 65px;
@@ -960,6 +975,20 @@ h3.resp-tab-active span.resp-arrow {
     line-height: 25px;
     margin-top: 15px;
 }
+
+.admin .services {
+    margin: 0;
+}
+.admin .services .services-dtl {
+    transition: all 0.5s;
+}
+.admin .services .services-dtl p {
+    margin-top: 10px;
+}
+.admin .services .services-dtl:hover {
+	transform: scale(1.1);
+}
+
 .testimonials {
     padding: 70px 0;
     background-color: #f3f6f8;
