@@ -13,13 +13,13 @@
                 <h2>Insurance<span>Press</span></h2>
                 <div class="row">
                     <div class="col-sm-6">
-                        <p>E104 Dharti -2 , Nr Silverstar Mall Chandlodia - Ahmedabad
-                            <br/>Zip - 382481</p>
+                        <p>123 fl 2 , Liberty Place Philadelphia - Pennsylvania
+                            <br/>Zip - 19019</p>
                     </div>
                     <div class="col-sm-6">
                         <ul>
                             <li><a href="#"><i class="fa fa-phone"></i>+1 (555) 555-5555</a></li>
-                            <li><a href="#"><i class="ti-email"></i> info@bootstrapmart.com</a></li>
+                            <li><a href="#"><i class="ti-email"></i> jslee423@gmail.com</a></li>
                         </ul>
                     </div>
                 </div>
@@ -29,13 +29,13 @@
                 <h2>Agent<span>Detail</span></h2>
                 <div class="row">
                     <div class="col-sm-6">
-                        <p>E104 Dharti -2 , Nr Silverstar Mall Chandlodia - Ahmedabad
-                            <br/>Zip - 382481</p>
+                        <p>123 fl 2 , Liberty Place Philadelphia - Pennsylvania
+                            <br/>Zip - 19019</p>
                     </div>
                     <div class="col-sm-6">
                         <ul>
                             <li><a href="#"><i class="fa fa-phone"></i>+1 (555) 555-5555</a></li>
-                            <li><a href="#"><i class="ti-email"></i> info@bootstrapmart.com</a></li>
+                            <li><a href="#"><i class="ti-email"></i> jslee423@gmail.com</a></li>
                         </ul>
                     </div>
                 </div>
