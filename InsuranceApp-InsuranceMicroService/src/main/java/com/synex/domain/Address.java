@@ -5,8 +5,8 @@ import jakarta.persistence.Embeddable;
 @Embeddable
 public class Address {
 
-	private String AddressLine1;
-	private String AddressLine2;
+	private String addressLine1;
+	private String addressLine2;
 	private String city;
 	private String state;
 	private String country;
@@ -16,8 +16,8 @@ public class Address {
 
 	public Address(String addressLine1, String addressLine2, String city, String state, String country, Long zipCode) {
 		super();
-		AddressLine1 = addressLine1;
-		AddressLine2 = addressLine2;
+		this.addressLine1 = addressLine1;
+		this.addressLine2 = addressLine2;
 		this.city = city;
 		this.state = state;
 		this.country = country;
@@ -25,19 +25,19 @@ public class Address {
 	}
 
 	public String getAddressLine1() {
-		return AddressLine1;
+		return addressLine1;
 	}
 
 	public void setAddressLine1(String addressLine1) {
-		AddressLine1 = addressLine1;
+		this.addressLine1 = addressLine1;
 	}
 
 	public String getAddressLine2() {
-		return AddressLine2;
+		return addressLine2;
 	}
 
 	public void setAddressLine2(String addressLine2) {
-		AddressLine2 = addressLine2;
+		this.addressLine2 = addressLine2;
 	}
 
 	public String getCity() {
