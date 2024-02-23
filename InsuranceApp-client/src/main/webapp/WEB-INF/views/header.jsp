@@ -12,7 +12,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-6 address">
-                    <i class="ti-location-pin"></i> 2109 WS 09 Oxford Rd #127 ParkVilla Hills, MI 48334
+                    <i class="ti-location-pin"></i> 1234 W Broad St #123 Philadelphia, PA 19019
                 </div>
                 <div class="col-sm-6 social">
                     <ul>
@@ -38,14 +38,17 @@
             </div>
             <div class="collapse navbar-collapse navbar-main-collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <sec:authorize access="hasAuthority('ADMIN') || hasAuthority('DBA')">
-                    	<li><a href="/admin">Admin</a></li>
-                    </sec:authorize>
                     <li><a href="/">Home</a></li>
                     <li><a href="/health">Plans</a></li>
                     <!-- <li><a href="blog.html">Blog</a></li>
                     <li><a href="blog-details.html">Blog Details</a></li> -->
                     <li><a href="contact-us.html">Contact</a></li>
+                    <sec:authorize access="hasAuthority('ADMIN') || hasAuthority('DBA')">
+                    	<li><a href="/admin">Admin</a></li>
+                    </sec:authorize>
+                    <sec:authorize access="hasAuthority('USER')">
+                    	<li><a href="/profile">My Profile</a></li>
+                    </sec:authorize>
                     <li>
                     	<sec:authorize access="isAuthenticated()">
                     		<a href="/login?logout" id="logout">Log out <i class="ti-arrow-right"></i></a>
