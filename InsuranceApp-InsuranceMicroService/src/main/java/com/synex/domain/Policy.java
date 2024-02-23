@@ -1,6 +1,7 @@
 package com.synex.domain;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -10,8 +11,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 
 @Entity
 public class Policy {
@@ -31,6 +32,8 @@ public class Policy {
 	@ManyToOne
 	private Plan plan;
 	private Double price;
+	@OneToMany
+	private List<Payment> payments;
 	
 	public Policy() {}
 
