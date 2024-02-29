@@ -11,4 +11,6 @@ public interface PolicyRepository extends JpaRepository<Policy, Long> {
 	public Policy findByCustomerIdAndPlanId(Long customerId, Long planId);
 	
 	public List<Policy> findByCustomerId(Long customerId);
+	
+	public List<Policy> findByStatus(String status); 
 }
