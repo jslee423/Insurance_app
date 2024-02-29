@@ -30,4 +30,13 @@ public class CustomerController {
 	public Customer findCustomerByUserId(@PathVariable Long userId) {
 		return customerService.findByUserId(userId);
 	} 
+	
+	@GetMapping("addCustomerDocs/{customerId}/{addressDoc}/{govIdDoc}")
+	public Customer addCustomerDocs(@PathVariable Long customerId, @PathVariable String addressDoc, @PathVariable String govIdDoc) {
+		Customer foundCustomer = customerService.findById(customerId);
+		foundCustomer.setAddressDoc(addressDoc);
+		foundCustomer.setGovIdDoc(govIdDoc);
+		
+		return customerService.save(foundCustomer);
+	} 
 }

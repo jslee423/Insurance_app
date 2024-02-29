@@ -18,4 +18,8 @@ public class CustomerService {
 	public Customer findByUserId(Long userId) {
 		return customerRepository.findByUserId(userId);
 	}
+	
+	public Customer findById(Long customerId) {
+		return customerRepository.findById(customerId).orElse(null);
+	} 
 }
