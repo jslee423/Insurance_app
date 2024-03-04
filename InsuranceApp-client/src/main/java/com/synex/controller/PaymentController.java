@@ -11,9 +11,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.stripe.exception.StripeException;
 import com.stripe.model.Coupon;
-import com.stripe.model.Customer;
-import com.stripe.model.CustomerSearchResult;
-import com.stripe.param.CustomerSearchParams;
 import com.synex.client.InsuranceClient;
 import com.synex.domain.Response;
 import com.synex.service.StripeService;
@@ -31,11 +28,6 @@ public class PaymentController {
     public PaymentController(StripeService stripeService) {
         this.stripeService = stripeService;
     }
-
-//    @GetMapping("/")
-//    public String homepage() {
-//        return "homepage";
-//    }
 
     @GetMapping("/subscription")
     public String subscriptionPage(Model model) {
@@ -124,6 +116,6 @@ public class PaymentController {
 
         // You may want to store the charge id along with order information
 
-        return new Response(true, "Success! Your charge id is " + chargeId);
+        return new Response(true, chargeId);
     }
 }
