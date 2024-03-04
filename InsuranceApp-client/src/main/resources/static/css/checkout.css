@@ -1,0 +1,22 @@
+.checkout h1, p, div {
+	font-weight: 300;
+	color: #304254;
+}
+
+.row:has(.paymentForm) {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.checkout .small {
+	margin-top: 10px;
+}
+
+.checkout .lead {
+	margin-bottom: 30px;
+}
+
+.checkout .form-group:has(button) {
+	padding: 10px;
+}
