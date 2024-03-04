@@ -1,0 +1,90 @@
+.profile {
+	color: #304254;
+	font-weight: 300;
+}
+
+.profile h2 {
+	padding: 30px 0;
+}
+
+.profile h3 {
+	font-weight: 300;
+}
+
+.profile .table th {
+	text-align: center;
+}
+
+.profile ol {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-bottom: 10px;
+	gap: 5px;
+}
+
+.profile li {
+	width: fit-content;
+	list-style: disc;
+}
+
+.profile li input {
+	display: inline-block;
+}
+
+.profile input::file-selector-button {
+	font-family: inherit;
+	font-weight: 600;
+	font-size: 13px;
+	background-color: #00b2ce;
+	color: #fff;
+	border: none;
+	padding: 0 25px;
+	line-height: 30px;
+	text-transform: uppercase;
+	border-radius: 25px;
+	box-shadow: inset 0 -3px 0 0 rgba(0, 0, 0, 0.15);
+	-webkit-box-shadow: inset 0 -3px 0 0 rgba(0, 0, 0, 0.15);
+	cursor: pointer;
+	margin-left: 10px;
+}
+
+.profile form {
+	padding-bottom: 20px;
+}
+
+.profile #fileClaim {
+	margin-bottom: 20px;
+}
+
+.profile #fileClaimDisabled {
+	margin-bottom: 0;
+	background-color: lightgray;
+}
+
+.profile .thumbnail {
+	width: 50px;
+	height: 50px;
+}
+
+.profile .customerInfo .uploadedDocs {
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+}
+
+.profile .viewBtn {
+	font-family: inherit;
+	font-weight: 600;
+	font-size: 13px;
+	background-color: #00b2ce;
+	color: #fff;
+	border: none;
+	padding: 0 15px;
+	line-height: 30px;
+	text-transform: uppercase;
+	border-radius: 25px;
+	box-shadow: inset 0 -3px 0 0 rgba(0, 0, 0, 0.15);
+	-webkit-box-shadow: inset 0 -3px 0 0 rgba(0, 0, 0, 0.15);
+	cursor: pointer;
+}
