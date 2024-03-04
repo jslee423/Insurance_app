@@ -3,7 +3,6 @@ package com.synex.service;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
@@ -29,7 +28,6 @@ public class UserDetailServiceImp implements UserDetailsService {
 		}
 		System.out.println("user: " + user.getUsername());
 		Collection<GrantedAuthority> authorities = new HashSet<>();
-		//Set<GrantedAuthority> ga = new HashSet<>();
 		List<Role> roles = user.getRoles();
 		for (Role role : roles) {
 			System.out.println("role.getRoleName()" + role.getRoleName());
