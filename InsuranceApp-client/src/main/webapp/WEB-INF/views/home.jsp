@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>  
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -85,25 +87,29 @@
                     <h2>Get a free quote</h2>
                     <form id="get-quote">
                         <div>
-                            <input type="text" name="name" placeholder="Your Name" />
+                            <input type="text" id="name" placeholder="Your Name" />
                         </div>
                         <div>
-                            <input type="text" name="email" placeholder="Email" />
+                            <input type="text" id="email" placeholder="Email" />
                         </div>
                         <div>
-                            <input type="text" name="ph-no" placeholder="Phone no" />
+                            <input type="text" id="ph-no" placeholder="Phone no" />
                         </div>
                         <div class="form-select">
                             <span></span>
                             <select>
-                                <option>Product</option>
+	                            <core:forEach items="${plans}" var="plan">
+	                            	<option value="${plan.get('id').asLong()}">Health - ${plan.get('planName').asText()}</option>
+	                            </core:forEach>
                             </select>
                         </div>
                         <div>
-                            <textarea rows="1" cols="1" placeholder="Message"></textarea>
+                            <textarea rows="1" cols="1" placeholder="Message" id="message"></textarea>
                         </div>
+                        <div class="quote-error"></div>
                         <div class="text-center">
-                            <input type="submit" class="btn-default" value="Get Free Quote" />
+                           <!--  <input type="submit" class="btn-default" value="Get Free Quote" /> -->
+                            <button id="get-quote-submit" class="btn-default">Get Free Quote</button>
                         </div>
                     </form>
                 </div>
@@ -134,7 +140,7 @@
                                     <i class="fa fa-phone"></i> +123 456 7890 <span>Toll Free</span>
                                 </p>
                                 <p>
-                                    <a class="btn-default" href="#">Get Free Quote</a>
+                                    <a class="btn-default" href="#">Apply Now</a>
                                 </p>
                             </div>
                             <img src="images/product-img.jpg" alt="" class="img-responsive" />
@@ -151,7 +157,7 @@
                                     <i class="fa fa-phone"></i> +123 456 7890 <span>Toll Free</span>
                                 </p>
                                 <p>
-                                    <a class="btn-default" href="#">Get Free Quote</a>
+                                    <a class="btn-default" href="#">Apply Now</a>
                                 </p>
                             </div>
                             <img src="images/1.jpg" alt="" class="img-responsive" />
@@ -168,7 +174,7 @@
                                     <i class="fa fa-phone"></i> +123 456 7890 <span>Toll Free</span>
                                 </p>
                                 <p>
-                                    <a class="btn-default" href="/apply">Get Free Quote</a>
+                                    <a class="btn-default" href="/apply">Apply Now</a>
                                 </p>
                             </div>
                             <img src="images/3.jpg" alt="" class="img-responsive" />
@@ -185,7 +191,7 @@
                                     <i class="fa fa-phone"></i> +123 456 7890 <span>Toll Free</span>
                                 </p>
                                 <p>
-                                    <a class="btn-default" href="#">Get Free Quote</a>
+                                    <a class="btn-default" href="#">Apply Now</a>
                                 </p>
                             </div>
                             <img src="images/2.jpg" alt="" class="img-responsive" />
@@ -434,5 +440,51 @@
 <script src="js/easyResponsiveTabs.js"></script>
 <script src="js/owl.carousel.js"></script>
 <script src="js/custom.js"></script>
+<script>
+	$("#get-quote-submit").click(function() {
+		if ($("#name").val() == "") {
+			
+		}
+		
+		$(".quote-error").empty()
+		if ($("#name").val() == "") {
+			console.log("error name")
+			$(".quote-error").append("<p>please enter name</p>")
+		} else if ($("#email").val() == "") {
+			$(".quote-error").append("<p>please enter email</p>")
+		} else if ($("#ph-no").val() == "") {
+			$(".quote-error").append("<p>please enter phone number</p>")
+		} else if ($("#message").val() == "") {
+			$(".quote-error").append("<p>please enter message</p>")
+		} else {
+			const plan = { id: $("#get-quote select option:selected").val() }
+		
+			const quoteRequest = {
+					name: $("#name").val(),
+					email: $("#email").val(),
+					phoneNumber: $("#ph-no").val(),
+					plan: plan,
+					message: $("#message").val()
+					
+			}
+
+			$.ajax({
+				type: "POST",
+				contentType: "application/json",
+				url: "/getPlanQuote",
+				data: JSON.stringify(quoteRequest),
+				dataType: "json",
+				success: function(data) {
+					console.log("request sent", data)
+					$(".quote-error").append("<p style='color: green'>request sent!</p>")
+				},
+				error: function(e) {
+					$(".quote-error").append("<p>error sending request</p>")
+				}
+			})
+		}
+		return false;
+	})
+</script>
 </body>
 </html>
