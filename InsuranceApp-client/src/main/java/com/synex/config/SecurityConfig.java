@@ -5,7 +5,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
@@ -19,11 +18,19 @@ public class SecurityConfig {
 	
 	@Bean 
 	public SecurityFilterChain apiFilterChain2(HttpSecurity http) throws Exception {
+		String[] staticResources = {
+				"/css/**",
+				"/js/**",
+				"/images/**",
+				"/less/**"
+		};
+		
 		http.csrf().disable()
-			.authorizeRequests().requestMatchers("/").permitAll().and()
-			.exceptionHandling().accessDeniedPage("/accessDeniedPage").and()
-			.authorizeRequests().requestMatchers("/admin","/restrict").hasAnyAuthority("ADMIN").and()
-			.authorizeRequests().requestMatchers("/userProfile").hasAnyAuthority("USER", "ADMIN").and()
+			.authorizeRequests().requestMatchers("/", "/health/**", "/charge/**").permitAll()
+			.requestMatchers(staticResources).permitAll().and()
+			.exceptionHandling().accessDeniedPage("/accessDenied").and()
+			.authorizeRequests().requestMatchers("/admin/**","/restrict").hasAnyAuthority("ADMIN").and()
+			.authorizeRequests().requestMatchers("/profile", "/apply/**", "/result/**").hasAnyAuthority("USER", "ADMIN").and()
 			//.authorizeRequests().requestMatchers("/test", "/userProfile").authenticated().and()
 			.formLogin()
 			.loginPage("/login")
