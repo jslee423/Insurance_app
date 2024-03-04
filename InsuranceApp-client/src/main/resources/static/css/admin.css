@@ -1,0 +1,93 @@
+.admin {
+	font-weight: 300;
+	color: #304254;
+}
+
+.admin h2 {
+	padding: 20px 0;
+}
+
+.admin .table th {
+	text-align: center;
+}
+
+#pendingCount a {
+	text-decoration: underline;
+}
+
+.admin .approveBtn {
+	font-family: inherit;
+	font-weight: 600;
+	font-size: 13px;
+	background-color: #00b2ce;
+	color: #fff;
+	border: none;
+	padding: 0 25px;
+	line-height: 30px;
+	text-transform: uppercase;
+	border-radius: 25px;
+	box-shadow: inset 0 -3px 0 0 rgba(0, 0, 0, 0.15);
+	-webkit-box-shadow: inset 0 -3px 0 0 rgba(0, 0, 0, 0.15);
+	cursor: pointer;
+	margin-left: 10px;
+}
+
+.admin .denyBtn {
+	font-family: inherit;
+	font-weight: 600;
+	font-size: 13px;
+	background-color: red;
+	color: #fff;
+	border: none;
+	padding: 0 25px;
+	line-height: 30px;
+	text-transform: uppercase;
+	border-radius: 25px;
+	box-shadow: inset 0 -3px 0 0 rgba(0, 0, 0, 0.15);
+	-webkit-box-shadow: inset 0 -3px 0 0 rgba(0, 0, 0, 0.15);
+	cursor: pointer;
+	margin-left: 10px;
+}
+
+.admin .services {
+    margin: 0;
+}
+.admin .services .services-dtl {
+    transition: all 0.5s;
+}
+.admin .services .services-dtl p {
+    margin-top: 10px;
+}
+.admin .services .services-dtl:hover {
+	transform: scale(1.1);
+}
+
+.admin .services .services-dtl span.disabled {
+	color: lightgray;
+}
+
+.admin h3 {
+	font-weight: 300;
+}
+
+.admin .viewBtn {
+	font-family: inherit;
+	font-weight: 600;
+	font-size: 13px;
+	background-color: #00b2ce;
+	color: #fff;
+	border: none;
+	padding: 0 15px;
+	line-height: 30px;
+	text-transform: uppercase;
+	border-radius: 25px;
+	box-shadow: inset 0 -3px 0 0 rgba(0, 0, 0, 0.15);
+	-webkit-box-shadow: inset 0 -3px 0 0 rgba(0, 0, 0, 0.15);
+	cursor: pointer;
+}
+
+.admin .customerDocs {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
