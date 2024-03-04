@@ -1,0 +1,13 @@
+.accessDenied {
+	min-height: 30vh;
+	font-weight: 300;
+	color: #304254;
+}
+
+.accessDenied h2 {
+	padding: 20px 0;
+}
+
+.accessDenied h4 {
+	font-weight: 300;
+}
