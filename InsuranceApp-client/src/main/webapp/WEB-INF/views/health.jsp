@@ -19,8 +19,17 @@
 <%@ include file="header.jsp" %>
 <div class="clear"></div>
 <div id="page-content">
+	<section class="breadcrumb">
+		<div class="container">
+			<h2>Compare Plans</h2>
+			<ul>
+				<li><a href="/">Home</a> ></li>
+				<li><a href="#">Plans</a></li>
+			</ul>
+		</div>
+    </section>
 	<div class="container-fluid health">
-		<h2 class="text-center">Compare Health Plans:</h2>
+		<!-- <h2 class="text-center">Compare Health Plans:</h2> -->
 		<nav>
 			<ul class="nav nav-tabs nav-justified">
 				<!-- <li role="presentation" class="active"><a href="#hmo" aria-controls="hmo" role="tab" data-toggle="tab">Health Maintenance Organizations (HMO)</a></li>
@@ -29,10 +38,10 @@
 					<li role="presentation" class='${status.first ? "active" : ""}'>
 						<a
 							href='#${insurance.get("name").toString().replace("\"", "").substring(insurance.get("name").toString().replace("\"", "").indexOf("(") + 1, insurance.get("name").toString().replace("\"", "").indexOf(")"))}'
-							aria-controls='${insurance.get("planType").toString().replace("\"", "")}'
+							aria-controls='${insurance.get("planType").asText()}'
 							role="tab"
 						>
-							${insurance.get("name").toString().replace('\"', "")}
+							${insurance.get("name").asText()}
 						</a>
 					</li>
 				</core:forEach>	
@@ -40,25 +49,25 @@
 		</nav>
 		<div class="tab-content">
 			<core:forEach items='${insurances}' var="insurance" varStatus="status">
-				<div role="tabpanel" class="tab-pane ${status.first ? 'active' : ''}" id='${insurance.get("planType").toString().replace("\"", "")}'>
+				<div role="tabpanel" class="tab-pane ${status.first ? 'active' : ''}" id='${insurance.get("planType").asText()}'>
 					<section class="product-tab health-tab ${insurance.get('name').toString().contains('PPO') ? 'product-tab-ppo' : ''}">
 						<div class="container">
 				            <div class="row">
 				            	<div class="parentVerticalTab">
 				            		<h2 class="${insurance.get('name').toString().contains('PPO') ? 'tab-header-ppo' : ''}">
-				            			${insurance.get("planType").toString().replace('\"', '')}'s
+				            			${insurance.get("planType").asText()}'s
 			            			</h2>
 			            			<ul class="resp-tabs-list hor_1 col-sm-3 col-md-3 col-lg-3 ${insurance.get('name').toString().contains('PPO') ? 'col-sm-offset-9 col-md-offset-9 col-lg-offset-9' : ''}">
 				            			<core:forEach items="${plans}" var="plan">
 				            				<core:if test='${plan.get("planType").toString() == insurance.get("planType").toString()}'>
 					            				<core:if test="${plan.get('planName').toString().contains('Gold')}">
-						            				<li><i class="fa fa-heart"></i> ${plan.get("planName").toString().replace('\"', '')}</li>
+						            				<li><i class="fa fa-heart"></i> ${plan.get("planName").asText()}</li>
 					            				</core:if>
 					            				<core:if test="${plan.get('planName').toString().contains('Silver')}">
-						            				<li><i class="fa fa-heart-o"></i> ${plan.get("planName").toString().replace('\"', '')}</li>
+						            				<li><i class="fa fa-heart-o"></i> ${plan.get("planName").asText()}</li>
 					            				</core:if>
 					            				<core:if test="${plan.get('planName').toString().contains('Basic')}">
-						            				<li><i class="ti-heart-broken"></i> ${plan.get("planName").toString().replace('\"', '')}</li>
+						            				<li><i class="ti-heart-broken"></i> ${plan.get("planName").asText()}</li>
 					            				</core:if>
 				            				</core:if>
 				            			</core:forEach>
@@ -70,7 +79,7 @@
 						                            <div class="prod-tab-content">
 						                                <h4>
 						                                    <span class="prod-cion" style="background-color: ${plan.get('planName').toString().contains('Gold') ? '#FFD700' : plan.get('planName').toString().contains('Silver') ?  '#dc2e17' : '#0582b6'}"><i class="fa fa-heart"></i></span>
-						                                    InsurancePress ${plan.get("planName").toString().replace('\"', '')}
+						                                    InsurancePress ${plan.get("planName").asText()}
 						                                </h4>
 						                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nibh urna, euismod ut ornare non, volutpat vel tortor. Integer</p>
 						                                <p>et placerat suscipit. Sed sodales scelerisque commodo. Nam porta cursus lectus. </p>
