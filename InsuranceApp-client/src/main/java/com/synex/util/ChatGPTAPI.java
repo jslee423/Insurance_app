@@ -7,11 +7,15 @@ import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+import org.springframework.beans.factory.annotation.Value;
+
 public class ChatGPTAPI {
+	@Value("${chatgpt.apikey}")
+    private static String API_KEY;
 
 	public static String chatGPT(String prompt) {
 		String url = "https://api.openai.com/v1/chat/completions";
-		String apiKey = "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";
+		String apiKey = API_KEY;
 		String model = "gpt-3.5-turbo";
 		
 		try {
