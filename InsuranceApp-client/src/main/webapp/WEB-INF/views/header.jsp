@@ -9,7 +9,7 @@
 <body>
 <header>
     <div class="top-bar">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
                 <div class="col-sm-6 address">
                     <i class="ti-location-pin"></i> 1234 W Broad St #123 Philadelphia, PA 19019
@@ -28,7 +28,7 @@
         </div>
     </div>
     <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-        <div class="container-fluid">
+        <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
                     <i class="fa fa-bars"></i>
@@ -40,9 +40,8 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="/">Home</a></li>
                     <li><a href="/health">Plans</a></li>
-                    <!-- <li><a href="blog.html">Blog</a></li>
-                    <li><a href="blog-details.html">Blog Details</a></li> -->
-                    <li><a href="contact-us.html">Contact</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="/chatGPT">ChatGPT</a></li>
                     <sec:authorize access="hasAuthority('ADMIN') || hasAuthority('DBA')">
                     	<li><a href="/admin">Admin</a></li>
                     </sec:authorize>
