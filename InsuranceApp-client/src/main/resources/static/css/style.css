@@ -976,19 +976,6 @@ h3.resp-tab-active span.resp-arrow {
     margin-top: 15px;
 }
 
-.admin .services {
-    margin: 0;
-}
-.admin .services .services-dtl {
-    transition: all 0.5s;
-}
-.admin .services .services-dtl p {
-    margin-top: 10px;
-}
-.admin .services .services-dtl:hover {
-	transform: scale(1.1);
-}
-
 .testimonials {
     padding: 70px 0;
     background-color: #f3f6f8;
